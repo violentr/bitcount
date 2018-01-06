@@ -37,4 +37,10 @@ RSpec.describe MyFile do
       expect(my_file.count_ones).to eq(37)
     end
   end
+  describe 'when file does not exist' do
+    it 'should raise Exception' do
+      expect{described_class.new(@file_path)}.to raise_error(Exception, 'File was not found')
+    end
+
+  end
 end
